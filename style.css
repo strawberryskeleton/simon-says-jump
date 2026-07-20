@@ -136,7 +136,7 @@ footer {
 
 
 .jumping {
-    animation: jump 1s linear infinite;
+    animation: jump 1s linear;
 }
 
 @keyframes jump {
