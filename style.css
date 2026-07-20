@@ -26,7 +26,7 @@ header {
 main {
     height: calc(100% - (5rem + 2rem));
     background-color: darkseagreen;
-    width: 80%;
+    width: 75%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -43,15 +43,54 @@ main {
 }*/
 
 .simon {
-    background-color: cornflowerblue;
-    width: 50%;
+    background-color: lightblue;
+    width: 60%;
     height: 80%;
     display: flex;
     align-items: flex-end;
+    gap: 2rem;
 }
 
 .simon .figure-img {
     width: 18rem;
+    height: 100%;
+}
+
+.simon .speech-bubble {
+    position: relative;
+    background-color: cadetblue;
+    border-radius: 6rem;
+    height: 20rem;
+    width: 25rem;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+
+    align-self: center;
+    position: relative;
+    top: -2rem;
+}
+
+.simon .speech-bubble::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 40%;
+    width: 0;
+    height: 0;
+    border: 4rem solid transparent;
+    border-right-color: cadetblue;
+    border-top: 0;
+    border-left: 0;
+    margin-top: -2rem;
+    margin-left: -4rem;
+    z-index: 1;
+}
+
+.simon .speech-bubble .cmd-box {
+    font-size: 4rem;
 }
 
 
@@ -65,6 +104,7 @@ main {
 
 .you .figure-img {
     width: 15rem;
+    height: 100%;
 }
 
 .name-tag {
@@ -81,38 +121,32 @@ main {
 
 
 
-
 .simon .figure-img img,
 .you .figure-img img {
     width: 100%;
+    height: 100%;
 }
 
-
-/* 
-.speech-bubble {
-	position: relative;
-	background: #00aabb;
-	border-radius: .4em;
-}
-
-.speech-bubble:after {
-	content: '';
-	position: absolute;
-	left: 0;
-	top: 50%;
-	width: 0;
-	height: 0;
-	border: 20px solid transparent;
-	border-right-color: #00aabb;
-	border-left: 0;
-	border-top: 0;
-	margin-top: -10px;
-	margin-left: -20px;
-}
- */
 
 
 footer {
     height: 2rem;
     background-color: chocolate;
+}
+
+
+.jumping {
+    animation: jump 1s linear infinite;
+}
+
+@keyframes jump {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3rem);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
