@@ -6,3 +6,49 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+
+body {
+    height: 100vh;
+    background-color: bisque;
+    position: relative;
+}
+
+header {
+    height: 5rem;
+    background-color: chocolate;
+    /* position: fixed;
+    top: 0; */
+    z-index: 100;
+}
+
+main {
+    height: calc(100% - 5rem);
+    background-color: darkseagreen;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*.simon, 
+.you {
+    /~ background-color: cornflowerblue; ~/
+    height: 80%;
+    width: 20%;
+    /~ position: absolute;
+    bottom: 5%; ~/
+}*/
+
+.simon {
+    background-color: cornflowerblue;
+    width: 50%;
+    height: 80%;
+}
+
+.you {
+    background-color: coral;
+    width: 20%;
+    height: 80%;
+}
