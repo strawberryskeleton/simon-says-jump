@@ -1,6 +1,8 @@
 
 const you = document.getElementById('you')
 const cmdBox = document.getElementById('cmd-box')
+const highscoreDisplay = document.getElementById('highscore')
+const scoreDisplay = document.getElementById('score')
 
 const commands = ["run", "sit",  "dance", "eat"]
 
@@ -9,17 +11,23 @@ let isJump = false
 let isJumping = false
 let cmdInterval
 
-if (isGameActive) {
-    cmdInterval = setInterval(() => {
-        isJump = false
-        getRandomAction()
-        // cmdBox.textContent = "..."
-        let reactionTimeout = setTimeout(() => {
-            evalUserAction()
-            cmdBox.textContent = "...."
-        }, 1000)
-    }, 3000)
-}
+let highscore = Number(localStorage.getItem('highscore')) || 0
+let score = 0
+
+highscoreDisplay.textContent = String(highscore).padStart(2, '0')
+scoreDisplay.textContent = String(score).padStart(2, '0')
+
+// if (isGameActive) {
+//     cmdInterval = setInterval(() => {
+//         isJump = false
+//         getRandomAction()
+//         // cmdBox.textContent = "..."
+//         let reactionTimeout = setTimeout(() => {
+//             evalUserAction()
+//             cmdBox.textContent = "...."
+//         }, 1000)
+//     }, 3000)
+// }
 
 document.addEventListener('keypress', (ev) => {
     // console.log(ev.code)
@@ -60,6 +68,7 @@ function evalUserAction () {
 
         if (isJump) {
             console.log("ok")
+            increaseScore()
         } else {
             console.log("not ok")
         }
@@ -70,8 +79,20 @@ function evalUserAction () {
             console.log("why not")
         } else {
             console.log("fine")
+            increaseScore()
         }
         // console.log("no jump")
     }
     console.log("----")
+}
+
+function increaseScore () {
+    score++
+    scoreDisplay.textContent = String(score).padStart(2, '0')
+
+    if (score >= highscore) {
+        highscore = score
+        localStorage.setItem('highscore', highscore)
+        highscoreDisplay.textContent = String(highscore).padStart(2,'0')
+    }
 }

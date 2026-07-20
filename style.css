@@ -17,10 +17,15 @@ body {
 
 header {
     height: 5rem;
+    width: 100%;
     background-color: chocolate;
     /* position: fixed;
     top: 0; */
     z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
 }
 
 main {
