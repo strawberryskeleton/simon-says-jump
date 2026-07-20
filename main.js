@@ -9,16 +9,17 @@ let isJump = false
 let isJumping = false
 let cmdInterval
 
-// if (isGameActive) {
-//     cmdInterval = setInterval(() => {
-//         isJump = false
-//         getRandomAction()
-//         // cmdBox.textContent = "..."
-//         let reactionTimeout = setTimeout(() => {
-//             evalUserAction()
-//         }, 1000)
-//     }, 3000)
-// }
+if (isGameActive) {
+    cmdInterval = setInterval(() => {
+        isJump = false
+        getRandomAction()
+        // cmdBox.textContent = "..."
+        let reactionTimeout = setTimeout(() => {
+            evalUserAction()
+            cmdBox.textContent = "...."
+        }, 1000)
+    }, 3000)
+}
 
 document.addEventListener('keypress', (ev) => {
     // console.log(ev.code)
@@ -72,4 +73,5 @@ function evalUserAction () {
         }
         // console.log("no jump")
     }
+    console.log("----")
 }
