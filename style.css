@@ -25,7 +25,7 @@ header {
 
 main {
     height: calc(100% - (5rem + 2rem));
-    background-color: darkseagreen;
+    /* background-color: darkseagreen; */
     width: 75%;
     margin: 0 auto;
     display: flex;
@@ -43,7 +43,7 @@ main {
 }*/
 
 .simon {
-    background-color: lightblue;
+    /* background-color: lightblue; */
     width: 60%;
     height: 80%;
     display: flex;
@@ -95,7 +95,7 @@ main {
 
 
 .you {
-    background-color: coral;
+    /* background-color: coral; */
     width: 15%;
     height: 80%;
     display: flex;
