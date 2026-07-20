@@ -6,12 +6,18 @@ const commands = ["run", "sit",  "dance", "eat"]
 
 let isGameActive = true
 let isJump = false
+let isJumping = false
 let cmdInterval
 
 // if (isGameActive) {
 //     cmdInterval = setInterval(() => {
+//         isJump = false
 //         getRandomAction()
-//     }, 5000)
+//         // cmdBox.textContent = "..."
+//         let reactionTimeout = setTimeout(() => {
+//             evalUserAction()
+//         }, 1000)
+//     }, 3000)
 // }
 
 document.addEventListener('keypress', (ev) => {
@@ -19,13 +25,20 @@ document.addEventListener('keypress', (ev) => {
     // getRandomAction()
 
     you.classList.add('jumping')
+    isJumping = true
+
+    // evalUserAction()
+
     const jumpTimeout = setTimeout(() => {
         you.classList.remove('jumping')
+        isJumping = false
         // console.log("now")
     },1000)
+
 })
 
 function getRandomAction () {
+
     const isJumpGenerated = Math.floor(Math.random() * 2) == 1 ? true : false
 
     if (isJumpGenerated) {
@@ -41,3 +54,22 @@ function getRandomAction () {
 
 }
 
+function evalUserAction () {
+    if (isJumping) {
+
+        if (isJump) {
+            console.log("ok")
+        } else {
+            console.log("not ok")
+        }
+
+    }
+    else {
+        if (isJump) {
+            console.log("why not")
+        } else {
+            console.log("fine")
+        }
+        // console.log("no jump")
+    }
+}
