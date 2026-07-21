@@ -128,6 +128,7 @@ function startGame() {
 
     startScreen.classList.add("hidden")
     endScreen.classList.add("hidden")
+    document.querySelector('main').classList.remove("dim")
 
     highscoreDisplay.textContent = String(highscore).padStart(2, '0')
     scoreDisplay.textContent = String(score).padStart(2, '0')
@@ -152,6 +153,7 @@ function gameOver() {
 
     endScoreDisplay.textContent = String(score).padStart(2, '0')
     endScreen.classList.remove("hidden")
+    document.querySelector('main').classList.add("dim")
 
     clearInterval(cmdInterval)
     // clearTimeout(reactionTimeout)

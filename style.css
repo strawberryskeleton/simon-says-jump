@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Gochi+Hand&display=swap');
 
+:root {
+    --dark: #333;
+    --light: #efefef;
+    --grey: #b5b5b5;
+}
+
 *,
 *::before,
 *::after {
@@ -31,7 +37,8 @@ body {
 header {
     height: 6rem;
     width: 100%;
-    background-color: chocolate;
+    background-color:  var(--dark);
+    color: var(--light);
     /* position: fixed;
     top: 0; */
     z-index: 100;
@@ -86,7 +93,8 @@ main {
 
 .simon .speech-bubble {
     position: relative;
-    background-color: cadetblue;
+    background-color: var(--dark);
+    color: var(--light);
     border-radius: 6rem;
     height: 20rem;
     width: 25rem;
@@ -109,7 +117,7 @@ main {
     width: 0;
     height: 0;
     border: 4rem solid transparent;
-    border-right-color: cadetblue;
+    border-right-color: var(--dark);
     border-top: 0;
     border-left: 0;
     margin-top: -2rem;
@@ -138,7 +146,7 @@ main {
 .name-tag {
     width: 8rem;
     margin: 0 auto;
-    background-color: crimson;
+    background-color: var(--grey);
     font-size: 1.5rem;
     padding: 0.6rem 1rem;
     border-radius: 1.5rem;
@@ -146,8 +154,6 @@ main {
     align-items: center;
     justify-content: center;
 }
-
-
 
 
 .simon .figure-img img,
@@ -166,8 +172,8 @@ footer {
     /* padding: 0.5rem; */
     /* text-align: center; */
     letter-spacing: 2px;
-    background-color: cadetblue;
-    color: var(--text-color);
+    background-color: var(--dark);
+    color: var(--light);
     font-size: 1.2rem;
     display: flex;
     align-items: center;
@@ -176,12 +182,12 @@ footer {
 
 footer a {
     text-decoration: none;
-    color: var(--text-color);
+    color: var(--light);
     transition: all 0.2s ease-in;
 }
 
 footer a:hover {
-    /* color: var(--text-color-light); */
+    color: var(--grey);
 }
 
 
@@ -231,6 +237,8 @@ footer a:hover {
     padding: 1rem 3rem;
     font-size: 1.8rem;
     border-radius: 12px;
+    background-color: var(--dark);
+    color: var(--light);
 }
 
 .hidden { 
