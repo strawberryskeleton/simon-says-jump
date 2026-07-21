@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Gochi+Hand&display=swap');
 
 *,
 *::before,
@@ -5,18 +6,30 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+    font-family: "Gochi Hand", cursive;
 }
 
+/* @font-face {
+    font-family: "Daz Handwriting";
+    src: url('./assets/DazHandwriting.otf') format('opentype');
+}
+
+@font-face {
+    font-family: "January Handwriting";
+    src: url('./assets/JanuaryHandwriting.otf') format('opentype');
+} */
 
 body {
     height: 100vh;
-    background-color: bisque;
+    background-color: black;
+    background: url('./assets/bg4.jpeg');
+    /* background-size: cover; */
     position: relative;
 }
 
 header {
-    height: 5rem;
+    height: 6rem;
     width: 100%;
     background-color: chocolate;
     /* position: fixed;
@@ -24,12 +37,22 @@ header {
     z-index: 100;
     display: flex;
     justify-content: space-between;
-    padding: 1rem 3rem;
-    font-size: 1.2rem;
+    padding: 0 3rem;
+    font-size: 1.75rem;
 }
 
+header .logo {
+    font-size: 6rem;
+    
+}
+
+header .stats {
+    padding: 1rem ;
+}
+
+
 main {
-    height: calc(100% - (5rem + 2rem));
+    height: calc(100% - (6rem + 2rem));
     /* background-color: darkseagreen; */
     width: 75%;
     margin: 0 auto;
@@ -75,7 +98,7 @@ main {
 
     align-self: center;
     position: relative;
-    top: -2rem;
+    top: -3rem;
 }
 
 .simon .speech-bubble::before {
@@ -95,7 +118,7 @@ main {
 }
 
 .simon .speech-bubble .cmd-box {
-    font-size: 4rem;
+    font-size: 6rem;
 }
 
 
@@ -113,11 +136,12 @@ main {
 }
 
 .name-tag {
-    width: 6rem;
+    width: 8rem;
     margin: 0 auto;
     background-color: crimson;
+    font-size: 1.5rem;
     padding: 0.6rem 1rem;
-    border-radius: 1rem;
+    border-radius: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -163,9 +187,35 @@ footer {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 100;
-    background-color: lightpink;
+    width: fit-content;
+    /* background-color: lightpink; */
+    font-size: 2rem;
+    text-align: center;
+}
+
+#start-screen h1,
+#end-screen h1 {
+    font-size: 8rem;
+    margin-bottom: 1.5rem;
+}
+
+#start-screen p, 
+#end-screen p {
+    margin-bottom: 2rem;
+}
+
+.start-game-btn {
+    border: none;
+    outline: none;
+    padding: 1rem 3rem;
+    font-size: 1.8rem;
+    border-radius: 12px;
 }
 
 .hidden { 
     display: none;
+}
+
+.dim {
+    opacity: 0.5;
 }
