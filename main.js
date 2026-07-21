@@ -9,16 +9,22 @@ const endScoreDisplay = document.getElementById('end-score')
 const startGameBtns = document.querySelectorAll('.start-game-btn')
 
 const commands = ["Run!", "Sit!", "Dance!", "Eat!"]
+const jumpingSound = new Audio('./assets/jumping.mp3')
+const bgMusic = new Audio('./assets/bg-music.mp3')
+bgMusic.loop = true
+bgMusic.volume = 0.6
 
 let isGameActive = false
 let isJump = false
 let isJumping = false
 let cmdInterval
+let isMusicStarted = false;
 
 let highscore = Number(localStorage.getItem('highscore')) || 0
 let score = 0
 
-
+bgMusic.currentTime = 0
+bgMusic.play()
 
 startGameBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -52,6 +58,9 @@ document.addEventListener('keypress', (ev) => {
     if (isGameActive && !isJumping) {
         you.classList.add('jumping')
         isJumping = true
+
+        // jumpSound.currentTime = 0;
+        jumpingSound.play()
 
         // evalUserAction()
 
