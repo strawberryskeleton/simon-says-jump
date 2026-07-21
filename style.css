@@ -107,6 +107,7 @@ main {
     align-self: center;
     position: relative;
     top: -3rem;
+    transition: all 0.2s ease-in;
 }
 
 .simon .speech-bubble::before {
@@ -127,6 +128,10 @@ main {
 
 .simon .speech-bubble .cmd-box {
     font-size: 6rem;
+}
+
+.simon .speech-bubble:hover {
+    transform: scale(1.05);
 }
 
 
@@ -153,6 +158,12 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.2s ease-in;
+}
+
+.name-tag:hover {
+    background-color: var(--dark);
+    color: var(--light);
 }
 
 
@@ -223,12 +234,13 @@ footer a:hover {
 #start-screen h1,
 #end-screen h1 {
     font-size: 8rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.25rem;
+    letter-spacing: 5px;
 }
 
 #start-screen p, 
 #end-screen p {
-    margin-bottom: 2rem;
+    margin-bottom: 5rem;
 }
 
 .start-game-btn {
@@ -239,6 +251,13 @@ footer a:hover {
     border-radius: 12px;
     background-color: var(--dark);
     color: var(--light);
+    transition: all 0.3s ease-in;
+    cursor: pointer;
+}
+
+.start-game-btn:hover {
+    background-color: #4b4b4b;
+    /* color: #f4f4f4; */
 }
 
 .hidden { 

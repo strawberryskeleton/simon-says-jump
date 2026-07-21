@@ -8,7 +8,7 @@ const endScreen = document.getElementById('end-screen')
 const endScoreDisplay = document.getElementById('end-score')
 const startGameBtns = document.querySelectorAll('.start-game-btn')
 
-const commands = ["run", "sit", "dance", "eat"]
+const commands = ["Run!", "Sit!", "Dance!", "Eat!"]
 
 let isGameActive = false
 let isJump = false
